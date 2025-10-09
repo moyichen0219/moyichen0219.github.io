@@ -24,15 +24,15 @@
 <link rel="stylesheet" href="/css/app.css?v=0.2.5">
 
   
-  <meta name="keywords" content="学习,贪心" />
+  <meta name="keywords" content="学习,贪心,双指针" />
 
 
-<link rel="canonical" href="http://example.com/2025/10/08/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB1/">
+<link rel="canonical" href="http://example.com/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB3/">
 
 
 
   <title>
-题目分享（一） |
+题目分享（三） |
 ❤️墨逸尘的小世界❤️ = 作者在不断更新中哦</title>
 <meta name="generator" content="Hexo 8.0.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -60,16 +60,16 @@
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">题目分享（一）
+  <h1 itemprop="name headline">题目分享（三）
   </h1>
   
 <div class="meta">
-  <span class="item" title="创建时间：2025-10-08 22:25:29">
+  <span class="item" title="创建时间：2025-10-09 11:30:28">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
     <span class="text">发表于</span>
-    <time itemprop="dateCreated datePublished" datetime="2025-10-08T22:25:29+08:00">2025-10-08</time>
+    <time itemprop="dateCreated datePublished" datetime="2025-10-09T11:30:28+08:00">2025-10-09</time>
   </span>
 </div>
 
@@ -102,12 +102,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicis081o9j20zk0m8dmr.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclfb3vzhj20zk0m8wny.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicivghyooj20zk0m8dir.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giciub8ja1j20zk0m81ky.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclj61ylzj20zk0m8b29.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicm0n457cj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicliwyw55j20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipexbei4hj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giciszlczyj20zk0m816d.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipeudstjqj20zk0m8k3r.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicitht3xtj20zk0m8k5v.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclwuom7cj20zk0m8dvn.jpg"></li>
         </ul>
       </div>
     </header>
@@ -136,7 +136,7 @@
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2025/10/08/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB1/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB3/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="/images/avatar.jpg">
@@ -151,26 +151,26 @@
   <div class="body md" itemprop="articleBody">
     
 
-    <h1>记录贪心学习中的某题</h1>
-<h2 id="题目选自蓝桥云课-谈判"><a href="%E8%B6%85%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80" title="https://www.lanqiao.cn/problems/545/learning/?page=1&amp;first_category_id=1&amp;name=%E8%B0%88%E5%88%A4">题目选自蓝桥云课 谈判</a></h2>
-<p>我们先来整理一下题意和注意事项。</p>
+    <h1>学习贪心之路题目小记</h1>
+<h2 id="选自蓝桥云课-纪念品分组"><a href="%E8%B6%85%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80" title="https://www.lanqiao.cn/problems/532/learning/?page=1&amp;first_category_id=1&amp;name=%E7%BA%AA%E5%BF%B5%E5%93%81%E5%88%86%E7%BB%84">选自蓝桥云课 纪念品分组</a></h2>
 <h3 id="题目要点整理">题目要点整理</h3>
-<p><strong>已知条件</strong>：</p>
 <ul>
-<li>输入有 n 个部落 (n &gt;= 1 &amp;&amp; n &lt;= 1000)</li>
-<li>读取 n 个数据表示每个部落人数</li>
-<li>求谈判成功的最小花费</li>
-</ul>
-<p><strong>思考</strong>：</p>
+<li>给定一个最大花费target，和每个纪念品的价格cost，分组使每组cost的和小于等于target（且每组最多两个纪念品），求最小分组</li>
+<li>因此，我们可以思考：
 <ul>
-<li>每次选择人数最少的两个部落合并，将合并后的新部落加入待合并列表，重复直到只剩一个部落（运用贪心思维，取局部最优解）</li>
+<li>把每个纪念品的价格cost排序</li>
+<li>寻找最大cost和最小cost的和，判断其是否小于等于最大花费target</li>
+<li>满足条件则group++，改变right和left指针</li>
+<li>不满足则right指向的cost单独成组，group++且right–</li>
 </ul>
-<p><strong>注意：每次谈判的花费要累加</strong></p>
+</li>
+</ul>
 <h3 id="代码实现">代码实现</h3>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e3</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> a[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> first = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> cost = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> length = n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n<span class="number">-1</span>; i++)&#123;</span><br><span class="line">        <span class="built_in">sort</span>(a,a+length);  <span class="comment">//注意是每次都选择人数最少的部落进行谈判</span></span><br><span class="line">        first = a[<span class="number">0</span>] + a[<span class="number">1</span>];  <span class="comment">//每次谈判的花费</span></span><br><span class="line">        cost += first;  <span class="comment">//谈判总花费</span></span><br><span class="line">        <span class="comment">//更新数组，再次进行寻找</span></span><br><span class="line">        a[<span class="number">0</span>] = first;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt; length <span class="number">-1</span>; j++)&#123;</span><br><span class="line">            a[j] = a[j + <span class="number">1</span>];</span><br><span class="line">        &#125; </span><br><span class="line">        length --;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,cost);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">3e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> cost[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> target;  <span class="comment">//最大花费</span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;target);</span><br><span class="line">    <span class="type">int</span> n;  <span class="comment">//总件数</span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    <span class="type">int</span> group = <span class="number">0</span>;  <span class="comment">//初始化组数</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span> ; i &lt; n; i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;cost[i]);  <span class="comment">//录入每一件价格</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(cost,cost+n);</span><br><span class="line">    <span class="type">int</span> left = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> right = n - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (left &lt;= right)&#123;</span><br><span class="line">        <span class="keyword">if</span> (cost[right] + cost[left] &lt;= target)&#123;</span><br><span class="line">            group ++;</span><br><span class="line">            right --;</span><br><span class="line">            left ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            group ++;</span><br><span class="line">            right --;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,group);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       <div class="tags">
           <a href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag"><i class="ic i-tag"></i> 学习</a>
           <a href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag"><i class="ic i-tag"></i> 贪心</a>
+          <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" rel="tag"><i class="ic i-tag"></i> 双指针</a>
       </div>
   </div>
 
@@ -182,7 +182,7 @@
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2025-10-09 11:35:51" itemprop="dateModified" datetime="2025-10-09T11:35:51+08:00">2025-10-09</time>
+    <time title="修改时间：2025-10-09 13:58:34" itemprop="dateModified" datetime="2025-10-09T13:58:34+08:00">2025-10-09</time>
   </span>
 </div>
 
@@ -208,7 +208,7 @@
   </li>
   <li class="link">
     <strong>本文链接：</strong>
-    <a href="http://example.com/2025/10/08/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB1/" title="题目分享（一）">http://example.com/2025/10/08/题目分享1/</a>
+    <a href="http://example.com/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB3/" title="题目分享（三）">http://example.com/2025/10/09/题目分享3/</a>
   </li>
   <li class="license">
     <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -227,20 +227,20 @@
     <div class="item left">
       
 
-  <a href="/2025/10/06/%E7%89%9B%E5%AE%A2%E5%91%A8%E8%B5%9Br112/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipew28b65j20zk0m8hdt.jpg" title="牛客周赛r112">
+  <a href="/2025/10/08/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB2/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicm0n457cj20zk0m8e81.jpg" title="题目分享（二）">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> </span>
-  <h3>牛客周赛r112</h3>
+  <h3>题目分享（二）</h3>
   </a>
 
     </div>
     <div class="item right">
       
 
-  <a href="/2025/10/08/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB2/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipevarprfj20zk0m8npd.jpg" title="题目分享（二）">
+  <a href="/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB4/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipewf5l51j20zk0m8b29.jpg" title="题目分享4">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> </span>
-  <h3>题目分享（二）</h3>
+  <h3>题目分享4</h3>
   </a>
 
     </div>
@@ -259,7 +259,7 @@
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">记录贪心学习中的某题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E9%80%89%E8%87%AA%E8%93%9D%E6%A1%A5%E4%BA%91%E8%AF%BE-%E8%B0%88%E5%88%A4"><span class="toc-number">1.1.</span> <span class="toc-text">题目选自蓝桥云课 谈判</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E8%A6%81%E7%82%B9%E6%95%B4%E7%90%86"><span class="toc-number">1.1.1.</span> <span class="toc-text">题目要点整理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.1.2.</span> <span class="toc-text">代码实现</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">学习贪心之路题目小记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E8%87%AA%E8%93%9D%E6%A1%A5%E4%BA%91%E8%AF%BE-%E7%BA%AA%E5%BF%B5%E5%93%81%E5%88%86%E7%BB%84"><span class="toc-number">1.1.</span> <span class="toc-text">选自蓝桥云课 纪念品分组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E8%A6%81%E7%82%B9%E6%95%B4%E7%90%86"><span class="toc-number">1.1.1.</span> <span class="toc-text">题目要点整理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.1.2.</span> <span class="toc-text">代码实现</span></a></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
       </div>
@@ -327,12 +327,12 @@
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2025/10/06/%E7%89%9B%E5%AE%A2%E5%91%A8%E8%B5%9Br112/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+        <a href="/2025/10/08/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB2/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2025/10/08/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB2/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+        <a href="/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB4/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -356,7 +356,7 @@
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB4/" title="题目分享4">题目分享4</a></span>
+    <span><a href="/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB3/" title="题目分享（三）">题目分享（三）</a></span>
   </li>
 
       
@@ -383,7 +383,7 @@
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB3/" title="题目分享（三）">题目分享（三）</a></span>
+    <span><a href="/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB4/" title="题目分享4">题目分享4</a></span>
   </li>
 
       
@@ -423,7 +423,7 @@
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: '2025/10/08/题目分享1/',
+    path: '2025/10/09/题目分享3/',
     favicon: {
       show: "（●´3｀●）",
       hide: "(´Д｀)消失了"

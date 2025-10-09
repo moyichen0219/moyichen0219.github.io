@@ -24,6 +24,8 @@
 <link rel="stylesheet" href="/css/app.css?v=0.2.5">
 
   
+  <meta name="keywords" content="学习,贪心" />
+
 
 <link rel="canonical" href="http://example.com/2025/10/08/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB2/">
 
@@ -100,12 +102,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclgi503lj20zk0m8hdt.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipev1x5e4j20zk0m8b29.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicli3sbvtj20zk0m8x6p.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/008b3D1Ply8i62t9hp3s2j316g0u0457.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicitf0kl1j20zk0m87fe.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicli9lfebj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipexw3o58j20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicm0fdw5cj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giph4baakhj20zk0m8h5q.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipeyonbf9j20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipetfk5zwj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipeun65urj20zk0m81ii.jpg"></li>
         </ul>
       </div>
     </header>
@@ -150,8 +152,8 @@
     
 
     <h1>记录贪心学习中的某题</h1>
-<h2 id="题目选自蓝桥云课-珠宝的最大交替和"><a href="%E8%B6%85%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80" title="https://www.lanqiao.cn/problems/3791/learning/?page=1&amp;first_category_id=1&amp;name=%E7%8F%A0%E5%AE%9D%E7%9A%84%E6%9C%80%E5%A4%A7%E4%BA%A4%E6%9B%BF%E5%92%8C">题目选自蓝桥云课 珠宝的最大交替和</a></h2>
-<h3 id="解题策略">解题策略</h3>
+<h2 id="选自蓝桥云课-珠宝的最大交替和"><a href="%E8%B6%85%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80" title="https://www.lanqiao.cn/problems/3791/learning/?page=1&amp;first_category_id=1&amp;name=%E7%8F%A0%E5%AE%9D%E7%9A%84%E6%9C%80%E5%A4%A7%E4%BA%A4%E6%9B%BF%E5%92%8C">选自蓝桥云课 珠宝的最大交替和</a></h2>
+<h3 id="题目要点整理">题目要点整理</h3>
 <p><strong>寻找最大交替和</strong></p>
 <ul>
 <li>根据题目我们发现奇数位为&quot;+“,偶数位为”-&quot;,优先计算出开始的交替和</li>
@@ -174,6 +176,10 @@
 <p><strong>注意：题目要求最多进行一次交替，不能多次交替</strong></p>
 <h3 id="代码实现">代码实现</h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">long</span> <span class="type">long</span> a[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">long</span> <span class="type">long</span> <span class="title">find_min</span><span class="params">(<span class="type">long</span> <span class="type">long</span> a, <span class="type">long</span> <span class="type">long</span> b)</span></span>;</span><br><span class="line"><span class="function"><span class="type">long</span> <span class="type">long</span> <span class="title">find_max</span><span class="params">(<span class="type">long</span> <span class="type">long</span> a, <span class="type">long</span> <span class="type">long</span> b)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> min = <span class="number">1e18</span>, max = <span class="number">-1e18</span>;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;a[i]);</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> pre = <span class="built_in">abs</span>(a[i]);</span><br><span class="line">        <span class="keyword">if</span> (i % <span class="number">2</span> == <span class="number">1</span>)&#123;</span><br><span class="line">            sum += pre;</span><br><span class="line">            min = <span class="built_in">find_min</span>(min,pre);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            sum -= pre;</span><br><span class="line">            max = <span class="built_in">find_max</span>(max,pre);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> compare = (max - min)*<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span> (compare &gt; <span class="number">0</span>)</span><br><span class="line">        sum = sum + compare;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld&quot;</span>,sum);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">long</span> <span class="type">long</span> <span class="title">find_min</span><span class="params">(<span class="type">long</span> <span class="type">long</span> a, <span class="type">long</span> <span class="type">long</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (a &gt; b)&#123;</span><br><span class="line">        <span class="keyword">return</span> b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">long</span> <span class="type">long</span> <span class="title">find_max</span><span class="params">(<span class="type">long</span> <span class="type">long</span> a, <span class="type">long</span> <span class="type">long</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (a &gt; b)&#123;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      <div class="tags">
+          <a href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag"><i class="ic i-tag"></i> 学习</a>
+          <a href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag"><i class="ic i-tag"></i> 贪心</a>
+      </div>
   </div>
 
    <footer>
@@ -184,7 +190,7 @@
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2025-10-09 11:12:57" itemprop="dateModified" datetime="2025-10-09T11:12:57+08:00">2025-10-09</time>
+    <time title="修改时间：2025-10-09 19:38:40" itemprop="dateModified" datetime="2025-10-09T19:38:40+08:00">2025-10-09</time>
   </span>
 </div>
 
@@ -229,7 +235,7 @@
     <div class="item left">
       
 
-  <a href="/2025/10/08/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB1/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipesrnqv3j20zk0m8ava.jpg" title="题目分享（一）">
+  <a href="/2025/10/08/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB1/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giciryrr3rj20zk0m8nhk.jpg" title="题目分享（一）">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> </span>
   <h3>题目分享（一）</h3>
@@ -237,6 +243,14 @@
 
     </div>
     <div class="item right">
+      
+
+  <a href="/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB3/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclg5ms2rj20zk0m8u0x.jpg" title="题目分享（三）">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>题目分享（三）</h3>
+  </a>
+
     </div>
 </div>
 
@@ -253,7 +267,7 @@
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">记录贪心学习中的某题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E9%80%89%E8%87%AA%E8%93%9D%E6%A1%A5%E4%BA%91%E8%AF%BE-%E7%8F%A0%E5%AE%9D%E7%9A%84%E6%9C%80%E5%A4%A7%E4%BA%A4%E6%9B%BF%E5%92%8C"><span class="toc-number">1.1.</span> <span class="toc-text">题目选自蓝桥云课 珠宝的最大交替和</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E7%AD%96%E7%95%A5"><span class="toc-number">1.1.1.</span> <span class="toc-text">解题策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.1.2.</span> <span class="toc-text">代码实现</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">记录贪心学习中的某题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E8%87%AA%E8%93%9D%E6%A1%A5%E4%BA%91%E8%AF%BE-%E7%8F%A0%E5%AE%9D%E7%9A%84%E6%9C%80%E5%A4%A7%E4%BA%A4%E6%9B%BF%E5%92%8C"><span class="toc-number">1.1.</span> <span class="toc-text">选自蓝桥云课 珠宝的最大交替和</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E8%A6%81%E7%82%B9%E6%95%B4%E7%90%86"><span class="toc-number">1.1.1.</span> <span class="toc-text">题目要点整理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.1.2.</span> <span class="toc-text">代码实现</span></a></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
       </div>
@@ -268,8 +282,14 @@
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">3</span>
+        <span class="count">5</span>
         <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">4</span>
+        <span class="name">标签</span>
       </a>
     </div>
 </nav>
@@ -315,10 +335,12 @@
 
   <ul id="quick">
     <li class="prev pjax">
+        <a href="/2025/10/08/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB1/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
+        <a href="/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB3/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -342,7 +364,25 @@
 <div class="breadcrumb">
 </div>
 
+    <span><a href="/2025/10/08/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB2/" title="题目分享（二）">题目分享（二）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
     <span><a href="/2025/10/06/%E7%89%9B%E5%AE%A2%E5%91%A8%E8%B5%9Br112/" title="牛客周赛r112">牛客周赛r112</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB4/" title="题目分享4">题目分享4</a></span>
   </li>
 
       
@@ -360,7 +400,7 @@
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2025/10/08/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB2/" title="题目分享（二）">题目分享（二）</a></span>
+    <span><a href="/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB3/" title="题目分享（三）">题目分享（三）</a></span>
   </li>
 
   </ul>
