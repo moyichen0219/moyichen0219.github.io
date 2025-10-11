@@ -102,12 +102,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicis081o9j20zk0m8dmr.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipew8gmvyj20zk0m87wh.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclh0m9pdj20zk0m8hdt.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/008b3D1Ply8i62t9gjxfkj31c00u0jzi.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclffsa1cj20zk0m811l.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclxfdlttj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclfdu6exj20zk0m87hw.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeudstjqj20zk0m8k3r.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giciuja1j1j20zk0m8kjl.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclhfehz7j20zk0m8u0x.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicljitigmj20zk0m87fp.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclh5u05ej20zk0m87df.jpg"></li>
         </ul>
       </div>
     </header>
@@ -170,9 +170,13 @@
 <li>4.将结果储存在新的整数数组中，进行完操作后逆序输出结果即可</li>
 </ul>
 </li>
+<li>
+<p>实现路径<br>
+数字 - 字符 - 逆序放入整数数组 - 从左往右做加法&amp;进位操作 - 逆序输出结果</p>
+</li>
 </ul>
 <h3 id="代码实现">代码实现</h3>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e3</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> a1[N]=&#123;<span class="number">0</span>&#125;,a2[N]=&#123;<span class="number">0</span>&#125;,target[N<span class="number">+1</span>]=&#123;<span class="number">0</span>&#125;;  <span class="comment">//初始化</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    string s1, s2;</span><br><span class="line">    cin &gt;&gt; s1 &gt;&gt; s2;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i= <span class="number">0</span>; i &lt; s<span class="number">1.</span><span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">        a1[s<span class="number">1.</span><span class="built_in">size</span>() - <span class="number">1</span> - i] = s1[i] - <span class="string">&#x27;0&#x27;</span>; <span class="comment">//字符数字减去字符0，得到整数数字</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; s<span class="number">2.</span><span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">        a2[s<span class="number">2.</span><span class="built_in">size</span>() - <span class="number">1</span> - i] = s2[i] - <span class="string">&#x27;0&#x27;</span>;  <span class="comment">//字符数字减去字符0，得到整数数字</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> len = <span class="built_in">max</span>(s<span class="number">1.</span><span class="built_in">size</span>(), s<span class="number">2.</span><span class="built_in">size</span>());</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;  <span class="comment">//模拟竖式计算</span></span><br><span class="line">        target[i] = a1[i] + a2[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;  <span class="comment">//进位操作</span></span><br><span class="line">        <span class="keyword">if</span>(target[i] &gt;= <span class="number">10</span>)&#123;</span><br><span class="line">            target[i<span class="number">+1</span>] += target[i] / <span class="number">10</span>;</span><br><span class="line">            target[i] %= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> start = len; <span class="comment">// 先假设最高位是len（可能有进位）</span></span><br><span class="line">    <span class="keyword">while</span> (start &gt; <span class="number">0</span> &amp;&amp; target[start] == <span class="number">0</span>) &#123;</span><br><span class="line">        start--; <span class="comment">// 找到第一个非零的最高位</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = start; i &gt;= <span class="number">0</span>; i--)&#123;  <span class="comment">//从第一个非0位开始输出</span></span><br><span class="line">        cout &lt;&lt; target[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e3</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> a1[N]=&#123;<span class="number">0</span>&#125;,a2[N]=&#123;<span class="number">0</span>&#125;,target[N<span class="number">+1</span>]=&#123;<span class="number">0</span>&#125;;  <span class="comment">//初始化</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    string s1, s2;</span><br><span class="line">    cin &gt;&gt; s1 &gt;&gt; s2;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i= <span class="number">0</span>; i &lt; s<span class="number">1.</span><span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">        a1[s<span class="number">1.</span><span class="built_in">size</span>() - <span class="number">1</span> - i] = s1[i] - <span class="string">&#x27;0&#x27;</span>; <span class="comment">//字符数字减去字符0，得到整数数字</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; s<span class="number">2.</span><span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">        a2[s<span class="number">2.</span><span class="built_in">size</span>() - <span class="number">1</span> - i] = s2[i] - <span class="string">&#x27;0&#x27;</span>;  <span class="comment">//字符数字减去字符0，得到整数数字</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> len = <span class="built_in">max</span>(s<span class="number">1.</span><span class="built_in">size</span>(), s<span class="number">2.</span><span class="built_in">size</span>());  <span class="comment">//数组长度最大值，高精度加法至少有len-1位数字</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;  <span class="comment">//模拟竖式计算</span></span><br><span class="line">        target[i] = a1[i] + a2[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;  <span class="comment">//进位操作</span></span><br><span class="line">        <span class="keyword">if</span>(target[i] &gt;= <span class="number">10</span>)&#123;</span><br><span class="line">            target[i<span class="number">+1</span>] += target[i] / <span class="number">10</span>;</span><br><span class="line">            target[i] %= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> start = len; <span class="comment">// 先假设最高位是len，此时已经假定加法进行后出现了进位</span></span><br><span class="line">    <span class="keyword">while</span> (start &gt; <span class="number">0</span> &amp;&amp; target[start] == <span class="number">0</span>) &#123;</span><br><span class="line">        start--; <span class="comment">// 找到第一个非零的最高位，判断是否存在进位</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = start; i &gt;= <span class="number">0</span>; i--)&#123;  <span class="comment">//从第一个非0位开始输出</span></span><br><span class="line">        cout &lt;&lt; target[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       <div class="tags">
           <a href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag"><i class="ic i-tag"></i> 学习</a>
           <a href="/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6/" rel="tag"><i class="ic i-tag"></i> 高精度</a>
@@ -188,7 +192,7 @@
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2025-10-11 01:29:27" itemprop="dateModified" datetime="2025-10-11T01:29:27+08:00">2025-10-11</time>
+    <time title="修改时间：2025-10-11 09:39:09" itemprop="dateModified" datetime="2025-10-11T09:39:09+08:00">2025-10-11</time>
   </span>
 </div>
 
@@ -233,7 +237,7 @@
     <div class="item left">
       
 
-  <a href="/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB4/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicitspjpbj20zk0m81ky.jpg" title="题目分享（四）">
+  <a href="/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB4/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclize41wj20zk0m87gk.jpg" title="题目分享（四）">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> </span>
   <h3>题目分享（四）</h3>
@@ -352,7 +356,34 @@
 <div class="breadcrumb">
 </div>
 
+    <span><a href="/2025/10/08/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB1/" title="题目分享（一）">题目分享（一）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
     <span><a href="/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB4/" title="题目分享（四）">题目分享（四）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB3/" title="题目分享（三）">题目分享（三）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/10/10/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB5/" title="题目分享（五）">题目分享（五）</a></span>
   </li>
 
       
@@ -371,33 +402,6 @@
 </div>
 
     <span><a href="/2025/10/06/%E7%89%9B%E5%AE%A2%E5%91%A8%E8%B5%9Br112/" title="牛客周赛r112">牛客周赛r112</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB3/" title="题目分享（三）">题目分享（三）</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2025/10/08/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB1/" title="题目分享（一）">题目分享（一）</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2025/10/10/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB5/" title="题目分享（五）">题目分享（五）</a></span>
   </li>
 
   </ul>
