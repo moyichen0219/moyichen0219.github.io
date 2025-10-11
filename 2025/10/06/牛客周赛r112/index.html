@@ -102,12 +102,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giph4baakhj20zk0m8h5q.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipet4bz0yj20zk0m8e81.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipevarprfj20zk0m8npd.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/008b3D1Ply8i62t9ebw5zj31hc0u0grc.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giciub8ja1j20zk0m81ky.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giph4wqtg4j20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipeu1usa7j20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giph4lm9i7j20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipeyonbf9j20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicm0n457cj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giciukx8a7j20zk0m8aio.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipexw3o58j20zk0m8e81.jpg"></li>
         </ul>
       </div>
     </header>
@@ -151,37 +151,31 @@
   <div class="body md" itemprop="articleBody">
     
 
-    <h1>第一场牛客周赛小记</h1>
-<h2 id="A题-ICPC-Regionals"><a href="%E8%B6%85%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80" title="https://ac.nowcoder.com/acm/contest/118247/A">A题 ICPC Regionals</a></h2>
-<p>我们先来整理一下题意和注意事项。</p>
-<h3 id="题目要点整理">题目要点整理</h3>
-<p><strong>已知条件</strong>：</p>
+    <h1 id="第一场牛客周赛小记"><a href="#第一场牛客周赛小记" class="headerlink" title="第一场牛客周赛小记"></a>第一场牛客周赛小记</h1><h2 id="A题-ICPC-Regionals"><a href="#A题-ICPC-Regionals" class="headerlink" title="A题 ICPC Regionals"></a><a href="%E8%B6%85%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80" title="https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;contest&#x2F;118247&#x2F;A">A题 ICPC Regionals</a></h2><p>我们先来整理一下题意和注意事项。</p>
+<h3 id="题目要点整理"><a href="#题目要点整理" class="headerlink" title="题目要点整理"></a>题目要点整理</h3><p><strong>已知条件</strong>：</p>
 <ul>
-<li>总队伍数 n  (n &gt;= 200 &amp;&amp; n &lt;= 500)</li>
-<li>小苯队伍的排名 k  (k &gt;= 1 &amp;&amp; k &lt;= n)</li>
-<li>金奖数量 = n * 0.1 后<strong>向上取整</strong></li>
-<li>银奖数量 = 金奖数量 × 2</li>
-<li>铜奖数量 = 金奖数量 × 3</li>
+<li>总队伍数 n  (n &gt;&#x3D; 200 &amp;&amp; n &lt;&#x3D; 500)</li>
+<li>小苯队伍的排名 k  (k &gt;&#x3D; 1 &amp;&amp; k &lt;&#x3D; n)</li>
+<li>金奖数量 &#x3D; n * 0.1 后<strong>向上取整</strong></li>
+<li>银奖数量 &#x3D; 金奖数量 × 2</li>
+<li>铜奖数量 &#x3D; 金奖数量 × 3</li>
 </ul>
 <p><strong>思考</strong>：</p>
 <ul>
-<li>第 1 名 ~ 第 <strong>金奖数量</strong> 名：金奖（“Gold Medal”）</li>
-<li>第 <strong>(金奖数量 + 1)</strong> 名 ~ 第 <strong>(金奖数量 + 银奖数量)</strong> 名：银奖（“Silver Medal”）</li>
-<li>第 <strong>(金奖数量 + 银奖数量 + 1)</strong> 名 ~ 第 <strong>(金奖数量 + 银奖数量 + 铜奖数量)</strong> 名：铜奖（“Bronze Medal”）</li>
-<li>其余：未获奖（“Da Tie”）</li>
+<li>第 1 名 ~ 第 <strong>金奖数量</strong> 名：金奖（”Gold Medal”）</li>
+<li>第 <strong>(金奖数量 + 1)</strong> 名 ~ 第 <strong>(金奖数量 + 银奖数量)</strong> 名：银奖（”Silver Medal”）</li>
+<li>第 <strong>(金奖数量 + 银奖数量 + 1)</strong> 名 ~ 第 <strong>(金奖数量 + 银奖数量 + 铜奖数量)</strong> 名：铜奖（”Bronze Medal”）</li>
+<li>其余：未获奖（”Da Tie”）</li>
 </ul>
 <p>注意：得奖人数不是整数时要求<strong>向上取整</strong></p>
-<h3 id="代码实现">代码实现</h3>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> all,rank;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>,&amp;all,&amp;rank);</span><br><span class="line">    <span class="type">int</span> glod = <span class="built_in">ceil</span>(all/<span class="number">10.0</span>);</span><br><span class="line">    <span class="type">int</span> silver = glod * <span class="number">2</span>;</span><br><span class="line">    <span class="type">int</span> bronze = glod * <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">if</span> (rank &gt; <span class="number">0</span> &amp;&amp; rank &lt;= glod)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Gold Medal&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (rank &gt; glod &amp;&amp; rank &lt;= glod + silver)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Silver Medal&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (rank &gt; glod + silver &amp;&amp; rank &lt;= glod + silver + bronze)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Bronze Medal&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Da Tie&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="B题-Card-Game"><a href="%E8%B6%85%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80" title="https://ac.nowcoder.com/acm/contest/118247/B">B题 Card Game</a></h2>
-<p>我们先来整理一下题意和注意事项。</p>
-<h3 id="题目要点整理-2">题目要点整理</h3>
-<p><strong>已知条件</strong>：</p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> all,rank;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>,&amp;all,&amp;rank);</span><br><span class="line">    <span class="type">int</span> glod = <span class="built_in">ceil</span>(all/<span class="number">10.0</span>);</span><br><span class="line">    <span class="type">int</span> silver = glod * <span class="number">2</span>;</span><br><span class="line">    <span class="type">int</span> bronze = glod * <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">if</span> (rank &gt; <span class="number">0</span> &amp;&amp; rank &lt;= glod)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Gold Medal&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (rank &gt; glod &amp;&amp; rank &lt;= glod + silver)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Silver Medal&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (rank &gt; glod + silver &amp;&amp; rank &lt;= glod + silver + bronze)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Bronze Medal&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Da Tie&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="B题-Card-Game"><a href="#B题-Card-Game" class="headerlink" title="B题 Card Game"></a><a href="%E8%B6%85%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80" title="https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;contest&#x2F;118247&#x2F;B">B题 Card Game</a></h2><p>我们先来整理一下题意和注意事项。</p>
+<h3 id="题目要点整理-1"><a href="#题目要点整理-1" class="headerlink" title="题目要点整理"></a>题目要点整理</h3><p><strong>已知条件</strong>：</p>
 <ul>
 <li>初始有 n 张牌，点数为 a_i 。</li>
-<li>可以执行任意次操作：
-<ul>
-<li>选择 k 张牌弃掉 (k &gt;= 1 &amp;&amp; k &lt;= 当前牌总数)</li>
+<li>可以执行任意次操作：<ul>
+<li>选择 k 张牌弃掉 (k &gt;&#x3D; 1 &amp;&amp; k &lt;&#x3D; 当前牌总数)</li>
 <li>获得一张点数为 k 的新牌。</li>
 </ul>
 </li>
@@ -190,25 +184,20 @@
 </ul>
 <p><strong>思考</strong>：</p>
 <ul>
-<li>操作的本质：弃掉 k 张牌，得到一张点数为 k 的牌。
-<ul>
-<li>新牌的点数 = 弃掉的牌数。</li>
+<li>操作的本质：弃掉 k 张牌，得到一张点数为 k 的牌。<ul>
+<li>新牌的点数 &#x3D; 弃掉的牌数。</li>
 </ul>
 </li>
-<li>因此可以把问题化为 n 与 a_max 的大小比较。
-<ul>
+<li>因此可以把问题化为 n 与 a_max 的大小比较。<ul>
 <li>若 a_max 小于 n ，那么我们可以选择放弃所有牌（即n张牌）使 <strong>点数最大的牌的点数</strong> 尽可能大。</li>
 <li>反之，a_max为点数最大的牌。</li>
 </ul>
 </li>
 </ul>
-<h3 id="代码实现-2">代码实现</h3>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">2e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> arr[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> t;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;t);</span><br><span class="line">    <span class="keyword">while</span> (t--)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">        <span class="type">int</span> a;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n<span class="number">-1</span>; i++)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;arr[i]);</span><br><span class="line">            <span class="keyword">if</span> (arr[i] &gt; a)&#123;</span><br><span class="line">                a = arr[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (a &gt; n)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,a);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,n);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="C题-Palindrome-Coloring"><a href="%E8%B6%85%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80%22https://ac.nowcoder.com/acm/contest/118247/C%22">C题 Palindrome Coloring</a></h2>
-<p>我们先来整理一下题意和注意事项。</p>
-<h3 id="题目要点整理-3">题目要点整理</h3>
-<h2 id="已知条件："><strong>已知条件</strong>：</h2>
+<h3 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">2e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> arr[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> t;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;t);</span><br><span class="line">    <span class="keyword">while</span> (t--)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">        <span class="type">int</span> a;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n<span class="number">-1</span>; i++)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;arr[i]);</span><br><span class="line">            <span class="keyword">if</span> (arr[i] &gt; a)&#123;</span><br><span class="line">                a = arr[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (a &gt; n)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,a);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,n);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+<h2 id="C题-Palindrome-Coloring"><a href="#C题-Palindrome-Coloring" class="headerlink" title="C题 Palindrome Coloring"></a><a href="%E8%B6%85%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80%22https://ac.nowcoder.com/acm/contest/118247/C%22">C题 Palindrome Coloring</a></h2><p>我们先来整理一下题意和注意事项。</p>
+<h3 id="题目要点整理-2"><a href="#题目要点整理-2" class="headerlink" title="题目要点整理"></a>题目要点整理</h3><h2 id="已知条件："><a href="#已知条件：" class="headerlink" title="已知条件："></a><strong>已知条件</strong>：</h2>
       <div class="tags">
           <a href="/tags/%E7%89%9B%E5%AE%A2%E5%91%A8%E8%B5%9B/" rel="tag"><i class="ic i-tag"></i> 牛客周赛</a>
       </div>
@@ -269,7 +258,7 @@
     <div class="item right">
       
 
-  <a href="/2025/10/08/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB1/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclwrdwyaj20zk0m8are.jpg" title="题目分享（一）">
+  <a href="/2025/10/08/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB1/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipeudstjqj20zk0m8k3r.jpg" title="题目分享（一）">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> </span>
   <h3>题目分享（一）</h3>
@@ -291,7 +280,7 @@
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">第一场牛客周赛小记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#A%E9%A2%98-ICPC-Regionals"><span class="toc-number">1.1.</span> <span class="toc-text">A题 ICPC Regionals</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E8%A6%81%E7%82%B9%E6%95%B4%E7%90%86"><span class="toc-number">1.1.1.</span> <span class="toc-text">题目要点整理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.1.2.</span> <span class="toc-text">代码实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B%E9%A2%98-Card-Game"><span class="toc-number">1.2.</span> <span class="toc-text">B题 Card Game</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E8%A6%81%E7%82%B9%E6%95%B4%E7%90%86-2"><span class="toc-number">1.2.1.</span> <span class="toc-text">题目要点整理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-2"><span class="toc-number">1.2.2.</span> <span class="toc-text">代码实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C%E9%A2%98-Palindrome-Coloring"><span class="toc-number">1.3.</span> <span class="toc-text">C题 Palindrome Coloring</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E8%A6%81%E7%82%B9%E6%95%B4%E7%90%86-3"><span class="toc-number">1.3.1.</span> <span class="toc-text">题目要点整理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%B2%E7%9F%A5%E6%9D%A1%E4%BB%B6%EF%BC%9A"><span class="toc-number">1.4.</span> <span class="toc-text">已知条件：</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E5%9C%BA%E7%89%9B%E5%AE%A2%E5%91%A8%E8%B5%9B%E5%B0%8F%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">第一场牛客周赛小记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#A%E9%A2%98-ICPC-Regionals"><span class="toc-number">1.1.</span> <span class="toc-text">A题 ICPC Regionals</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E8%A6%81%E7%82%B9%E6%95%B4%E7%90%86"><span class="toc-number">1.1.1.</span> <span class="toc-text">题目要点整理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.1.2.</span> <span class="toc-text">代码实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B%E9%A2%98-Card-Game"><span class="toc-number">1.2.</span> <span class="toc-text">B题 Card Game</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E8%A6%81%E7%82%B9%E6%95%B4%E7%90%86-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">题目要点整理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-1"><span class="toc-number">1.2.2.</span> <span class="toc-text">代码实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C%E9%A2%98-Palindrome-Coloring"><span class="toc-number">1.3.</span> <span class="toc-text">C题 Palindrome Coloring</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E8%A6%81%E7%82%B9%E6%95%B4%E7%90%86-2"><span class="toc-number">1.3.1.</span> <span class="toc-text">题目要点整理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%B2%E7%9F%A5%E6%9D%A1%E4%BB%B6%EF%BC%9A"><span class="toc-number">1.4.</span> <span class="toc-text">已知条件：</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
       </div>
@@ -306,13 +295,13 @@
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">6</span>
+        <span class="count">7</span>
         <span class="name">文章</span>
       </a>
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">6</span>
+        <span class="count">8</span>
         <span class="name">标签</span>
       </a>
     </div>
@@ -386,15 +375,6 @@
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB4/" title="题目分享（四）">题目分享（四）</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
     <span><a href="/2025/10/08/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB1/" title="题目分享（一）">题目分享（一）</a></span>
   </li>
 
@@ -413,7 +393,16 @@
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2025/10/10/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB5/" title="题目分享（五）">题目分享（五）</a></span>
+    <span><a href="/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB4/" title="题目分享（四）">题目分享（四）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB3/" title="题目分享（三）">题目分享（三）</a></span>
   </li>
 
       
@@ -431,7 +420,16 @@
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB3/" title="题目分享（三）">题目分享（三）</a></span>
+    <span><a href="/2025/10/10/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB5/" title="题目分享（五）">题目分享（五）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/10/11/%E6%95%B0%E8%AE%BA%E5%85%A5%E9%97%A8/" title="数论入门">数论入门</a></span>
   </li>
 
   </ul>
