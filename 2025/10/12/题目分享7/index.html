@@ -24,15 +24,15 @@
 <link rel="stylesheet" href="/css/app.css?v=0.2.5">
 
   
-  <meta name="keywords" content="学习,贪心,双指针" />
+  <meta name="keywords" content="学习,高精度,模板" />
 
 
-<link rel="canonical" href="http://example.com/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB4/">
+<link rel="canonical" href="http://example.com/2025/10/12/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB7/">
 
 
 
   <title>
-题目分享（四） |
+题目分享（七） |
 ❤️墨逸尘的小世界❤️ = 作者在不断更新中哦</title>
 <meta name="generator" content="Hexo 8.0.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -60,16 +60,16 @@
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">题目分享（四）
+  <h1 itemprop="name headline">题目分享（七）
   </h1>
   
 <div class="meta">
-  <span class="item" title="创建时间：2025-10-09 19:37:28">
+  <span class="item" title="创建时间：2025-10-12 00:41:08">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
     <span class="text">发表于</span>
-    <time itemprop="dateCreated datePublished" datetime="2025-10-09T19:37:28+08:00">2025-10-09</time>
+    <time itemprop="dateCreated datePublished" datetime="2025-10-12T00:41:08+08:00">2025-10-12</time>
   </span>
 </div>
 
@@ -102,12 +102,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclxfdlttj20zk0m8npd.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicli3sbvtj20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giciryrr3rj20zk0m8nhk.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclfdu6exj20zk0m87hw.jpg"></li>
           <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipexe4oykj20zk0m87ji.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giciuv0socj20zk0m8qes.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipew8gmvyj20zk0m87wh.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipesng5oej20zk0m87d4.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipexj2jgzj20zk0m8b09.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclj61ylzj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclwuom7cj20zk0m8dvn.jpg"></li>
         </ul>
       </div>
     </header>
@@ -136,7 +136,7 @@
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB4/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2025/10/12/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB7/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="/images/avatar.jpg">
@@ -151,18 +151,27 @@
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="学习贪心之路题目小记"><a href="#学习贪心之路题目小记" class="headerlink" title="学习贪心之路题目小记"></a>学习贪心之路题目小记</h1><h2 id="选自洛谷-P4995跳跳！"><a href="#选自洛谷-P4995跳跳！" class="headerlink" title="选自洛谷 P4995跳跳！"></a><a href="%E8%B6%85%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80" title="https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;problem&#x2F;P4995">选自洛谷 P4995跳跳！</a></h2><h3 id="题目要点整理"><a href="#题目要点整理" class="headerlink" title="题目要点整理"></a>题目要点整理</h3><ul>
-<li>需跳到<strong>每块石头各一次</strong>（共n块），最终停在任意石头上，目标是让总体力消耗<strong>最大化</strong></li>
-<li>规则：从第i阶台阶跳到第j阶台阶，消耗（i-j）*（i-j）体力</li>
-<li>由此我们可以想到，在对石头高度进行排序后，采用<strong>交替跳最高&#x2F;最低</strong>的策略，即从一端（最高或最低）跳到另一端，反复交替，能最大化每次跳跃的高度差，进而最大化总消耗</li>
-<li>观察可得，我们可以用双指针来实现该策略</li>
+    <h1 id="小记高精度学习"><a href="#小记高精度学习" class="headerlink" title="小记高精度学习"></a>小记高精度学习</h1><h2 id="选自洛谷-P1480-A-B-Problem"><a href="#选自洛谷-P1480-A-B-Problem" class="headerlink" title="选自洛谷 P1480 A&#x2F;B Problem"></a><a href="%E8%B6%85%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80" title="https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;problem&#x2F;P1480">选自洛谷 P1480 A&#x2F;B Problem</a></h2><h3 id="高精度除法"><a href="#高精度除法" class="headerlink" title="高精度除法"></a>高精度除法</h3><p>基于此题，我们来研究一下高精度除法的所有内容</p>
+<ul>
+<li>分类<br>  高精度除法一般分为三类：<ul>
+<li>1.单精度数 ➗ 单精度数，求商为高精度数</li>
+<li>2.高精度数 ➗ 单精度数，求商和余数</li>
+<li>3.高精度数 ➗高精度数，求商和余数</li>
 </ul>
-<p><strong>注意：pow函数返回值是double型</strong></p>
-<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> height[<span class="number">305</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;height[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(height,height+n);</span><br><span class="line">    <span class="type">int</span> left = <span class="number">0</span>;  <span class="comment">//未跳过最低台阶</span></span><br><span class="line">    <span class="type">int</span> right = n - <span class="number">1</span>;  <span class="comment">//未跳过最高台阶</span></span><br><span class="line">    <span class="type">int</span> pre = <span class="number">0</span>;  <span class="comment">//在地面</span></span><br><span class="line">    <span class="type">int</span> cur = <span class="number">0</span>;  <span class="comment">//当前位置</span></span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> cost = <span class="number">0</span>;</span><br><span class="line">    <span class="type">bool</span> where_jump = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span> (where_jump)&#123;</span><br><span class="line">            cur = height[right];</span><br><span class="line">            right --;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            cur = height[left];</span><br><span class="line">            left ++;</span><br><span class="line">        &#125;</span><br><span class="line">        cost += (<span class="type">long</span> <span class="type">long</span>)<span class="built_in">pow</span>((cur - pre),<span class="number">2</span>);</span><br><span class="line">        pre = cur;</span><br><span class="line">        where_jump = !where_jump;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld&quot;</span>,cost);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="第一种类型-单精度数除以单精度数-求高精度商"><a href="#第一种类型-单精度数除以单精度数-求高精度商" class="headerlink" title="第一种类型 单精度数除以单精度数 求高精度商"></a>第一种类型 单精度数除以单精度数 求高精度商</h3><p><strong>例子：已知 a,b 为10^8范围内的整数，求a除以b保留前n位小数商的结果。</strong></p>
+<p><strong>模拟一下竖式计算：</strong><br>    - 先通过a &#x2F; b 得到商的整数部分<br>    - 输出字符“.”，开始求小数部分<br>    - 初始化小数部分求解起始值 t &#x3D; (a % b) * 10<br>    - 求多少位小数的商就做几次以下循环：<br>        - t &#x2F; b 得到其中一位小数并输出<br>        - 更新 t 的值，t %&#x3D; b</p>
+<p><strong>代码实现</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> a, b, n;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin &gt;&gt; a &gt;&gt; b &gt;&gt; n;</span><br><span class="line">    cout &lt;&lt; a / b &lt;&lt; <span class="string">&quot;.&quot;</span>;</span><br><span class="line">    <span class="type">int</span> t = a % b;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">        t *= <span class="number">10</span>;</span><br><span class="line">        cout &lt;&lt; t / b;</span><br><span class="line">        t %= b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="第二种类型-高精度数除以单精度数-求商和余数"><a href="#第二种类型-高精度数除以单精度数-求商和余数" class="headerlink" title="第二种类型 高精度数除以单精度数 求商和余数"></a>第二种类型 高精度数除以单精度数 求商和余数</h3><p><strong>例子：已知 a 是一个不超过240位的高精度数，b 为10^8范围内的非负整数，求a除以b的商和余数。</strong></p>
+<p><strong>模拟一下竖式计算：</strong></p>
+
       <div class="tags">
           <a href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag"><i class="ic i-tag"></i> 学习</a>
-          <a href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag"><i class="ic i-tag"></i> 贪心</a>
-          <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" rel="tag"><i class="ic i-tag"></i> 双指针</a>
+          <a href="/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6/" rel="tag"><i class="ic i-tag"></i> 高精度</a>
+          <a href="/tags/%E6%A8%A1%E6%9D%BF/" rel="tag"><i class="ic i-tag"></i> 模板</a>
       </div>
   </div>
 
@@ -174,7 +183,7 @@
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2025-10-10 10:36:00" itemprop="dateModified" datetime="2025-10-10T10:36:00+08:00">2025-10-10</time>
+    <time title="修改时间：2025-10-12 03:18:49" itemprop="dateModified" datetime="2025-10-12T03:18:49+08:00">2025-10-12</time>
   </span>
 </div>
 
@@ -200,7 +209,7 @@
   </li>
   <li class="link">
     <strong>本文链接：</strong>
-    <a href="http://example.com/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB4/" title="题目分享（四）">http://example.com/2025/10/09/题目分享4/</a>
+    <a href="http://example.com/2025/10/12/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB7/" title="题目分享（七）">http://example.com/2025/10/12/题目分享7/</a>
   </li>
   <li class="license">
     <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -219,20 +228,20 @@
     <div class="item left">
       
 
-  <a href="/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB3/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipew28b65j20zk0m8hdt.jpg" title="题目分享（三）">
+  <a href="/2025/10/11/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB6/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipevarprfj20zk0m8npd.jpg" title="题目分享（六）">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> </span>
-  <h3>题目分享（三）</h3>
+  <h3>题目分享（六）</h3>
   </a>
 
     </div>
     <div class="item right">
       
 
-  <a href="/2025/10/10/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB5/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipexj2jgzj20zk0m8b09.jpg" title="题目分享（五）">
+  <a href="/2025/10/12/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB8/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipeu1usa7j20zk0m8b29.jpg" title="题目分享8">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> </span>
-  <h3>题目分享（五）</h3>
+  <h3>题目分享8</h3>
   </a>
 
     </div>
@@ -251,7 +260,7 @@
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E8%B4%AA%E5%BF%83%E4%B9%8B%E8%B7%AF%E9%A2%98%E7%9B%AE%E5%B0%8F%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">学习贪心之路题目小记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E8%87%AA%E6%B4%9B%E8%B0%B7-P4995%E8%B7%B3%E8%B7%B3%EF%BC%81"><span class="toc-number">1.1.</span> <span class="toc-text">选自洛谷 P4995跳跳！</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E8%A6%81%E7%82%B9%E6%95%B4%E7%90%86"><span class="toc-number">1.1.1.</span> <span class="toc-text">题目要点整理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.1.2.</span> <span class="toc-text">代码实现</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B0%8F%E8%AE%B0%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.</span> <span class="toc-text">小记高精度学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E8%87%AA%E6%B4%9B%E8%B0%B7-P1480-A-B-Problem"><span class="toc-number">1.1.</span> <span class="toc-text">选自洛谷 P1480 A&#x2F;B Problem</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E7%B2%BE%E5%BA%A6%E9%99%A4%E6%B3%95"><span class="toc-number">1.1.1.</span> <span class="toc-text">高精度除法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%A7%8D%E7%B1%BB%E5%9E%8B-%E5%8D%95%E7%B2%BE%E5%BA%A6%E6%95%B0%E9%99%A4%E4%BB%A5%E5%8D%95%E7%B2%BE%E5%BA%A6%E6%95%B0-%E6%B1%82%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%95%86"><span class="toc-number">1.1.2.</span> <span class="toc-text">第一种类型 单精度数除以单精度数 求高精度商</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%A7%8D%E7%B1%BB%E5%9E%8B-%E9%AB%98%E7%B2%BE%E5%BA%A6%E6%95%B0%E9%99%A4%E4%BB%A5%E5%8D%95%E7%B2%BE%E5%BA%A6%E6%95%B0-%E6%B1%82%E5%95%86%E5%92%8C%E4%BD%99%E6%95%B0"><span class="toc-number">1.1.3.</span> <span class="toc-text">第二种类型 高精度数除以单精度数 求商和余数</span></a></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
       </div>
@@ -319,12 +328,12 @@
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB3/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+        <a href="/2025/10/11/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB6/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2025/10/10/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB5/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+        <a href="/2025/10/12/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB8/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -348,7 +357,7 @@
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB3/" title="题目分享（三）">题目分享（三）</a></span>
+    <span><a href="/2025/10/08/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB2/" title="题目分享（二）">题目分享（二）</a></span>
   </li>
 
       
@@ -366,15 +375,6 @@
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB4/" title="题目分享（四）">题目分享（四）</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
     <span><a href="/2025/10/12/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB8/" title="题目分享8">题目分享8</a></span>
   </li>
 
@@ -384,7 +384,7 @@
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2025/10/11/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB6/" title="题目分享（六）">题目分享（六）</a></span>
+    <span><a href="/2025/10/08/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB1/" title="题目分享（一）">题目分享（一）</a></span>
   </li>
 
       
@@ -393,7 +393,7 @@
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2025/10/06/%E7%89%9B%E5%AE%A2%E5%91%A8%E8%B5%9Br112/" title="牛客周赛r112">牛客周赛r112</a></span>
+    <span><a href="/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB4/" title="题目分享（四）">题目分享（四）</a></span>
   </li>
 
       
@@ -411,7 +411,7 @@
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2025/10/08/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB2/" title="题目分享（二）">题目分享（二）</a></span>
+    <span><a href="/2025/10/11/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB6/" title="题目分享（六）">题目分享（六）</a></span>
   </li>
 
       
@@ -429,7 +429,16 @@
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2025/10/08/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB1/" title="题目分享（一）">题目分享（一）</a></span>
+    <span><a href="/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB3/" title="题目分享（三）">题目分享（三）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2025/10/06/%E7%89%9B%E5%AE%A2%E5%91%A8%E8%B5%9Br112/" title="牛客周赛r112">牛客周赛r112</a></span>
   </li>
 
   </ul>
@@ -460,7 +469,7 @@
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: '2025/10/09/题目分享4/',
+    path: '2025/10/12/题目分享7/',
     favicon: {
       show: "（●´3｀●）",
       hide: "(´Д｀)消失了"
