@@ -1,523 +1,694 @@
 
 
-
-
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#FFF">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 
-<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
-  <meta http-equiv="Cache-Control" content="no-transform">
-  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar1.jpg">
+  <link rel="icon" href="/img/avatar1.jpg">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Yichen Mo">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="选自941code 逆序对 题目要点整理 已知；  要求构造一个长度为 n 的排列（即1~n在该排列中均仅出现一次） 这个排列要满足有 m 项逆序对 如果存在多个符合条件的排列，则输出字典序最小的那一个 数据范围： n&gt;&#x3D;1 &amp;&amp; n&lt;&#x3D;210^5 , m&gt;&#x3D;0 &amp;&amp; m&lt;&#x3D;n(n-1)&#x2F;2 观察数据范围，我们发现 m 会超出int类型范围，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="题目分享（八）">
+<meta property="og:url" content="http://example.com/2025/10/12/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB8/index.html">
+<meta property="og:site_name" content="Moyichen的Blog喵">
+<meta property="og:description" content="选自941code 逆序对 题目要点整理 已知；  要求构造一个长度为 n 的排列（即1~n在该排列中均仅出现一次） 这个排列要满足有 m 项逆序对 如果存在多个符合条件的排列，则输出字典序最小的那一个 数据范围： n&gt;&#x3D;1 &amp;&amp; n&lt;&#x3D;210^5 , m&gt;&#x3D;0 &amp;&amp; m&lt;&#x3D;n(n-1)&#x2F;2 观察数据范围，我们发现 m 会超出int类型范围，">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-10-12T04:28:52.000Z">
+<meta property="article:modified_time" content="2025-10-12T07:23:47.610Z">
+<meta property="article:author" content="Yichen Mo">
+<meta property="article:tag" content="贪心">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>题目分享（八） - Moyichen的Blog喵</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
-<link rel="alternate" type="application/rss+xml" title="作者在不断更新中哦" href="http://example.com/rss.xml" />
-<link rel="alternate" type="application/atom+xml" title="作者在不断更新中哦" href="http://example.com/atom.xml" />
-<link rel="alternate" type="application/json" title="作者在不断更新中哦" href="http://example.com/feed.json" />
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
 
-<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
 
   
-  <meta name="keywords" content="贪心" />
+
+  
+
+  
+
+  
+
+  
 
 
-<link rel="canonical" href="http://example.com/2025/10/12/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB8/">
 
-
-
-  <title>
-题目分享（八） |
-❤️墨逸尘的小世界❤️ = 作者在不断更新中哦</title>
+  
 <meta name="generator" content="Hexo 8.0.0"></head>
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div id="loading">
-    <div class="cat">
-      <div class="body"></div>
-      <div class="head">
-        <div class="face"></div>
-      </div>
-      <div class="foot">
-        <div class="tummy-end"></div>
-        <div class="bottom"></div>
-        <div class="legs left"></div>
-        <div class="legs right"></div>
-      </div>
-      <div class="paw">
-        <div class="hands left"></div>
-        <div class="hands right"></div>
-      </div>
-    </div>
-  </div>
-  <div id="container">
-    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="inner">
-        <div id="brand">
-          <div class="pjax">
-          
-  <h1 itemprop="name headline">题目分享（八）
-  </h1>
+
+
+<body>
   
-<div class="meta">
-  <span class="item" title="创建时间：2025-10-12 12:28:52">
-    <span class="icon">
-      <i class="ic i-calendar"></i>
-    </span>
-    <span class="text">发表于</span>
-    <time itemprop="dateCreated datePublished" datetime="2025-10-12T12:28:52+08:00">2025-10-12</time>
-  </span>
-</div>
 
+  <header>
+    
 
-          </div>
-        </div>
-        <nav id="nav">
-  <div class="inner">
-    <div class="toggle">
-      <div class="lines" aria-label="切换导航栏">
-        <span class="line"></span>
-        <span class="line"></span>
-        <span class="line"></span>
-      </div>
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>墨逸尘的博客喵</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
     </div>
-    <ul class="menu">
-      <li class="item title"><a href="/" rel="start">❤️墨逸尘的小世界❤️</a></li>
-    </ul>
-    <ul class="right">
-      <li class="item theme">
-        <i class="ic i-sun"></i>
-      </li>
-      <li class="item search">
-        <i class="ic i-search"></i>
-      </li>
-    </ul>
   </div>
 </nav>
 
-      </div>
-      <div id="imgs" class="pjax">
-        <ul>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicitspjpbj20zk0m81ky.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipew8gmvyj20zk0m87wh.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicm0fdw5cj20zk0m8hdt.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeun65urj20zk0m81ii.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicli9lfebj20zk0m84qp.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclgi503lj20zk0m8hdt.jpg"></li>
-        </ul>
-      </div>
-    </header>
-    <div id="waves">
-      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-        <defs>
-          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-        </defs>
-        <g class="parallax">
-          <use xlink:href="#gentle-wave" x="48" y="0" />
-          <use xlink:href="#gentle-wave" x="48" y="3" />
-          <use xlink:href="#gentle-wave" x="48" y="5" />
-          <use xlink:href="#gentle-wave" x="48" y="7" />
-        </g>
-      </svg>
-    </div>
-    <main>
-      <div class="inner">
-        <div id="main" class="pjax">
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/%5Cimg%5C1.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
           
-  <div class="article wrap">
+            <span id="subtitle" data-typed-text="题目分享（八）"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
     
-<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
-<i class="ic i-home"></i>
-<span><a href="/">首页</a></span>
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-10-12 12:28" pubdate>
+          2025年10月12日 中午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          744 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          7 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
 </div>
 
-    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2025/10/12/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB8/">
+</div>
 
-  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="image" content="/images/avatar.jpg">
-    <meta itemprop="name" content="Yichen Mo">
-    <meta itemprop="description" content=", ">
-  </span>
+  </header>
 
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="作者在不断更新中哦">
-  </span>
-
-  <div class="body md" itemprop="articleBody">
+  <main>
     
+      
 
-    <h2 id="选自941code-逆序对"><a href="#选自941code-逆序对" class="headerlink" title="选自941code 逆序对"></a><a href="%E8%B6%85%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80" title="http:&#x2F;&#x2F;941code.com&#x2F;problem&#x2F;detail&#x2F;22512bbd-0a5b-4e1e-b413-4129d05317fd&#x2F;P5448">选自941code 逆序对</a></h2><h3 id="题目要点整理"><a href="#题目要点整理" class="headerlink" title="题目要点整理"></a>题目要点整理</h3><p><strong>已知</strong>；</p>
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">题目分享（八）</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="选自941code-逆序对"><a href="%E8%B6%85%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80" title="http://941code.com/problem/detail/22512bbd-0a5b-4e1e-b413-4129d05317fd/P5448">选自941code 逆序对</a></h2>
+<h3 id="题目要点整理">题目要点整理</h3>
+<p><strong>已知</strong>；</p>
 <ul>
 <li>要求构造一个长度为 n 的排列（即1~n在该排列中均仅出现一次）</li>
 <li>这个排列要满足有 m 项逆序对</li>
 <li>如果存在多个符合条件的排列，则输出字典序最小的那一个</li>
-<li>数据范围：<br>  <em><em>n&gt;&#x3D;1 &amp;&amp; n&lt;&#x3D;2*10^5 , m&gt;&#x3D;0 &amp;&amp; m&lt;&#x3D;n</em>(n-1)&#x2F;2</em>*<br>  观察数据范围，我们发现 m 会超出int类型范围，应当使用<strong>long long</strong>类型</li>
+<li>数据范围：<br />
+<strong>n&gt;=1 &amp;&amp; n&lt;=2<em>10^5 , m&gt;=0 &amp;&amp; m&lt;=n</em>(n-1)/2</strong><br />
+观察数据范围，我们发现 m 会超出int类型范围，应当使用<strong>long long</strong>类型</li>
 </ul>
 <p><strong>思考</strong>：</p>
 <ul>
-<li><p>为了输出最小字典序的排列，我们应当让前面的数尽可能地小</p>
+<li>
+<p>为了输出最小字典序的排列，我们应当让前面的数尽可能地小</p>
 </li>
-<li><p>但同时，我们也要满足逆序对数量的要求</p>
-<pre><code>  那我们该怎么做呢？
+<li>
+<p>但同时，我们也要满足逆序对数量的要求</p>
+<pre><code class="hljs">  那我们该怎么做呢？
 </code></pre>
 </li>
 </ul>
 <p><strong>实现</strong>：</p>
 <ul>
-<li>1.初始化两个指针start&#x3D;1，end&#x3D;n，代表当前可以用于填入排列的最小数和最大数</li>
-<li>2.对于每一个位置i（0~n-1）；<ul>
-<li>计算剩余的位置，即leave &#x3D; n - i - 1</li>
-<li>计算剩余位置还能产生多少逆序对：may_m &#x3D; leave*(leave-1)&#x2F;2 (此时，需要注意数据范围，开long long（博主不开long long被爆了😅😅😅）)</li>
-<li>如果 <strong>当前逆序对数cur + 可以产生的逆序对数may_m &gt; 要求生成的逆序对数m</strong>:<ul>
+<li>1.初始化两个指针start=1，end=n，代表当前可以用于填入排列的最小数和最大数</li>
+<li>2.对于每一个位置i（0~n-1）；
+<ul>
+<li>计算剩余的位置，即leave = n - i - 1</li>
+<li>计算剩余位置还能产生多少逆序对：may_m = leave*(leave-1)/2 (此时，需要注意数据范围，开long long（博主不开long long被爆了😅😅😅）)</li>
+<li>如果 <strong>当前逆序对数cur + 可以产生的逆序对数may_m &gt; 要求生成的逆序对数m</strong>:
+<ul>
 <li>我们可以把start填入当前位置，并不会影响到题目要求的逆序对数的同时，让字典序最小</li>
 <li>放入start后，更新start值，避免重复</li>
 </ul>
 </li>
-<li>否则：<ul>
-<li>计算还差多少个逆序对要生成（在内部还需要产生多少个逆序对）：blank &#x3D; m - cur （需要的总逆序对数 - 当前可以产生的逆序对数）</li>
-<li>当前位置（a[i]）放置 now （now &#x3D; blank - may_m），这个数字会与后面now个数字生成逆序对</li>
+<li>否则：
+<ul>
+<li>计算还差多少个逆序对要生成（在内部还需要产生多少个逆序对）：blank = m - cur （需要的总逆序对数 - 当前可以产生的逆序对数）</li>
+<li>当前位置（a[i]）放置 now （now = blank - may_m），这个数字会与后面now个数字生成逆序对</li>
 <li>剩余数字从小到大排在后面</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> m;</span><br><span class="line">    <span class="type">int</span> a[<span class="number">200010</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %lld&quot;</span>,&amp;n,&amp;m);  <span class="comment">//n 排序长度 ，m 逆序对数</span></span><br><span class="line">    <span class="comment">// for (int i = 0; i &lt; n; i++)&#123;</span></span><br><span class="line">    <span class="comment">//     a[i] = i+1;</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line"><span class="comment">/*  int temp = a[m-1];</span></span><br><span class="line"><span class="comment">    a[m-1] = a[n-1];</span></span><br><span class="line"><span class="comment">    a[n-1] = temp; */</span>  <span class="comment">//该段注释掉的代码未考虑全所有情况</span></span><br><span class="line">    <span class="type">int</span> cur = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> start = <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> end = n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">        <span class="type">int</span> leave = n - i - <span class="number">1</span>;  <span class="comment">//填充了i个数字，后面还剩多少位数字</span></span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> may_m = (<span class="type">long</span> <span class="type">long</span>)leave * (leave - <span class="number">1</span>) / <span class="number">2</span>;  <span class="comment">//后面能够形成多少对逆序对</span></span><br><span class="line">        <span class="keyword">if</span> (cur + may_m &gt;= m)&#123;  <span class="comment">//足够满足逆序对</span></span><br><span class="line">            a[i] = start;</span><br><span class="line">            start ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;  <span class="comment">//要是不够呢</span></span><br><span class="line">            <span class="type">int</span> blank = m - cur;  <span class="comment">//还差多少个逆序对要构造（需要内部在构造多几个逆序对？）</span></span><br><span class="line">            <span class="type">int</span> now = blank - may_m;  <span class="comment">//zheyicinenggaoduoshao?  这一次要构造多少个逆序对</span></span><br><span class="line">            a[i] = start + now;  <span class="comment">//给你这个，后面再对剩下的数进行逆序操作</span></span><br><span class="line">            <span class="type">int</span> index = i + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j = end; j &gt;= start; j --)&#123;  <span class="comment">//逆序填充</span></span><br><span class="line">                <span class="keyword">if</span> (j != a[i])&#123;  <span class="comment">//去重</span></span><br><span class="line">                    a[index] = j;</span><br><span class="line">                    index ++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">break</span>;  <span class="comment">//完成逆序对构造</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//足够，填start，更新数字</span></span><br><span class="line"><span class="comment">//不够，填构造逆序对的最大数</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-      <div class="tags">
-          <a href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag"><i class="ic i-tag"></i> 贪心</a>
-      </div>
-  </div>
+<h3 id="代码">代码</h3>
+<p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><code class="hljs c"><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;stdio.h&gt;</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span>&#123;<br>    <span class="hljs-type">int</span> n;<br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> m;<br>    <span class="hljs-type">int</span> a[<span class="hljs-number">200010</span>] = &#123;<span class="hljs-number">0</span>&#125;;<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d %lld&quot;</span>,&amp;n,&amp;m);  <span class="hljs-comment">//n 排序长度 ，m 逆序对数</span><br>    <span class="hljs-comment">// for (int i = 0; i &lt; n; i++)&#123;</span><br>    <span class="hljs-comment">//     a[i] = i+1;</span><br>    <span class="hljs-comment">// &#125;</span><br><span class="hljs-comment">/*  int temp = a[m-1];</span><br><span class="hljs-comment">    a[m-1] = a[n-1];</span><br><span class="hljs-comment">    a[n-1] = temp; */</span>  <span class="hljs-comment">//该段注释掉的代码未考虑全所有情况</span><br>    <span class="hljs-type">int</span> cur = <span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> start = <span class="hljs-number">1</span>;<br>    <span class="hljs-type">int</span> end = n;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)&#123;<br>        <span class="hljs-type">int</span> leave = n - i - <span class="hljs-number">1</span>;  <span class="hljs-comment">//填充了i个数字，后面还剩多少位数字</span><br>        <span class="hljs-type">long</span> <span class="hljs-type">long</span> may_m = (<span class="hljs-type">long</span> <span class="hljs-type">long</span>)leave * (leave - <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>;  <span class="hljs-comment">//后面能够形成多少对逆序对</span><br>        <span class="hljs-keyword">if</span> (cur + may_m &gt;= m)&#123;  <span class="hljs-comment">//足够满足逆序对</span><br>            a[i] = start;<br>            start ++;<br>        &#125;<br>        <span class="hljs-keyword">else</span> &#123;  <span class="hljs-comment">//要是不够呢</span><br>            <span class="hljs-type">int</span> blank = m - cur;  <span class="hljs-comment">//还差多少个逆序对要构造（需要内部在构造多几个逆序对？）</span><br>            <span class="hljs-type">int</span> now = blank - may_m;  <span class="hljs-comment">//zheyicinenggaoduoshao?  这一次要构造多少个逆序对</span><br>            a[i] = start + now;  <span class="hljs-comment">//给你这个，后面再对剩下的数进行逆序操作</span><br>            <span class="hljs-type">int</span> index = i + <span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = end; j &gt;= start; j --)&#123;  <span class="hljs-comment">//逆序填充</span><br>                <span class="hljs-keyword">if</span> (j != a[i])&#123;  <span class="hljs-comment">//去重</span><br>                    a[index] = j;<br>                    index ++;<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">break</span>;  <span class="hljs-comment">//完成逆序对构造</span><br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)&#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>,a[i]);<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-comment">//足够，填start，更新数字</span><br><span class="hljs-comment">//不够，填构造逆序对的最大数</span><br><br></code></pre></td></tr></table></figure></p>
 
-   <footer>
-
-    <div class="meta">
-  <span class="item">
-    <span class="icon">
-      <i class="ic i-calendar-check"></i>
-    </span>
-    <span class="text">更新于</span>
-    <time title="修改时间：2025-10-12 15:23:47" itemprop="dateModified" datetime="2025-10-12T15:23:47+08:00">2025-10-12</time>
-  </span>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E8%B4%AA%E5%BF%83/" class="print-no-link">#贪心</a>
+      
+    </div>
+  
 </div>
 
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>题目分享（八）</div>
+      <div>http://example.com/2025/10/12/题目分享8/</div>
+    </div>
+    <div class="license-meta">
       
-<div class="reward">
-  <button><i class="ic i-heartbeat"></i> 赞赏</button>
-  <p>请我喝[茶]~(￣▽￣)~*</p>
-  <div id="qr">
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Yichen Mo</div>
+        </div>
       
-      <div>
-        <img data-src="/images/wechatpay.png" alt="Yichen Mo 微信支付">
-        <p>微信支付</p>
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年10月12日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-cc-nc"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/10/12/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB9/" title="题目分享（九）">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">题目分享（九）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/10/12/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB7/" title="题目分享（七）">
+                        <span class="hidden-mobile">题目分享（七）</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
       </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
   </div>
 </div>
 
-      
 
-<div id="copyright">
-<ul>
-  <li class="author">
-    <strong>本文作者： </strong>Yichen Mo <i class="ic i-at"><em>@</em></i>作者在不断更新中哦
-  </li>
-  <li class="link">
-    <strong>本文链接：</strong>
-    <a href="http://example.com/2025/10/12/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB8/" title="题目分享（八）">http://example.com/2025/10/12/题目分享8/</a>
-  </li>
-  <li class="license">
-    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
-  </li>
-</ul>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
 </div>
 
   </footer>
 
-</article>
-
-  </div>
+  <!-- Scripts -->
   
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
 
-<div class="post-nav">
-    <div class="item left">
-      
-
-  <a href="/2025/10/12/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB7/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclfw2t96j20zk0m8x6p.jpg" title="题目分享（七）">
-  <span class="type">上一篇</span>
-  <span class="category"><i class="ic i-flag"></i> </span>
-  <h3>题目分享（七）</h3>
-  </a>
-
-    </div>
-    <div class="item right">
-      
-
-  <a href="/2025/10/12/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB9/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipey84bjtj20zk0m8hdt.jpg" title="题目分享（九）">
-  <span class="type">下一篇</span>
-  <span class="category"><i class="ic i-flag"></i> </span>
-  <h3>题目分享（九）</h3>
-  </a>
-
-    </div>
-</div>
-
-  
-  <div class="wrap" id="comments"></div>
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
 
 
-        </div>
-        <div id="sidebar">
-          
-
-<div class="inner">
-
-  <div class="panels">
-    <div class="inner">
-      <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E8%87%AA941code-%E9%80%86%E5%BA%8F%E5%AF%B9"><span class="toc-number">1.</span> <span class="toc-text">选自941code 逆序对</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E8%A6%81%E7%82%B9%E6%95%B4%E7%90%86"><span class="toc-number">1.1.</span> <span class="toc-text">题目要点整理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">1.2.</span> <span class="toc-text">代码</span></a></li></ol></li></ol>
-      </div>
-      <div class="related panel pjax" data-title="系列文章">
-      </div>
-      <div class="overview panel" data-title="站点概览">
-        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <img class="image" itemprop="image" alt="Yichen Mo"
-      data-src="/images/avatar.jpg">
-  <p class="name" itemprop="name">Yichen Mo</p>
-  <div class="description" itemprop="description"></div>
-</div>
-
-<nav class="state">
-    <div class="item posts">
-      <a href="/archives/">
-        <span class="count">15</span>
-        <span class="name">文章</span>
-      </a>
-    </div>
-    <div class="item tags">
-      <a href="/tags/">
-        <span class="count">16</span>
-        <span class="name">标签</span>
-      </a>
-    </div>
-</nav>
-
-<div class="social">
-      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL21veWljaGVuMDIxOQ==" title="https:&#x2F;&#x2F;github.com&#x2F;moyichen0219"><i class="ic i-github"></i></span>
-</div>
-
-<ul class="menu">
-  
-    
-  <li class="item">
-    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
-  </li>
-
-    
-  <li class="item">
-    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
-  </li>
-
-        
-  <li class="item">
-    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
-  </li>
-
-        
-  <li class="item">
-    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
-  </li>
-
-        
-  <li class="item">
-    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
-  </li>
-
-  </ul>
-
-</ul>
-
-      </div>
-    </div>
-  </div>
-
-  <ul id="quick">
-    <li class="prev pjax">
-        <a href="/2025/10/12/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB7/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
-    </li>
-    <li class="up"><i class="ic i-arrow-up"></i></li>
-    <li class="down"><i class="ic i-arrow-down"></i></li>
-    <li class="next pjax">
-        <a href="/2025/10/12/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB9/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
-    </li>
-    <li class="percent"></li>
-  </ul>
-</div>
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
 
 
-        </div>
-        <div class="dimmer"></div>
-      </div>
-    </main>
-    <footer id="footer">
-      <div class="inner">
-        <div class="widgets">
-          
-<div class="rpost pjax">
-  <h2>随机文章</h2>
-  <ul>
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2025/10/12/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB9/" title="题目分享（九）">题目分享（九）</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2025/10/08/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB1/" title="题目分享（一）">题目分享（一）</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2025/10/14/vector/" title="vector">vector</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2025/10/17/cpp%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" title="cpp基础学习 之 链表">cpp基础学习 之 链表</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2025/11/10/%E2%80%9C%E5%87%8B%E7%81%B5%E9%AA%B7%E9%AB%85%E5%9B%9B%E4%BA%BA%E8%A1%8C%E2%80%9D%E4%B9%8B%E7%88%BD%E5%90%83%E7%BD%9A%E6%97%B6/" title="“凋灵骷髅四人行”之爽吃罚时">“凋灵骷髅四人行”之爽吃罚时</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2025/11/05/%E4%BA%8C%E7%BB%B4%E5%89%8D%E7%BC%80%E5%92%8C%E4%B8%8E%E5%B7%AE%E5%88%86/" title="二维前缀和与差分">二维前缀和与差分</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2025/10/09/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB4/" title="题目分享（四）">题目分享（四）</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2025/10/11/%E9%A2%98%E7%9B%AE%E5%88%86%E4%BA%AB6/" title="题目分享（六）">题目分享（六）</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2025/10/06/%E7%89%9B%E5%AE%A2%E5%91%A8%E8%B5%9Br112/" title="牛客周赛r112">牛客周赛r112</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2025/10/11/%E6%95%B0%E8%AE%BA%E5%85%A5%E9%97%A8%E4%B9%8Bgcd/" title="数论入门之gcd与lcm">数论入门之gcd与lcm</a></span>
-  </li>
-
-  </ul>
-</div>
-<div>
-  <h2>最新评论</h2>
-  <ul class="leancloud-recent-comment"></ul>
-</div>
-
-        </div>
-        <div class="status">
-  <div class="copyright">
-    
-    &copy; 
-    <span itemprop="copyrightYear">2025</span>
-    <span class="with-love">
-      <i class="ic i-sakura rotate"></i>
-    </span>
-    <span class="author" itemprop="copyrightHolder">Yichen Mo @ ❤️墨逸尘的小世界❤️</span>
-  </div>
-  <div class="powered-by">
-    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
-  </div>
-</div>
-
-      </div>
-    </footer>
-  </div>
-<script data-config type="text/javascript">
-  var LOCAL = {
-    path: '2025/10/12/题目分享8/',
-    favicon: {
-      show: "（●´3｀●）",
-      hide: "(´Д｀)消失了"
-    },
-    search : {
-      placeholder: "文章搜索",
-      empty: "关于 「 ${query} 」，什么也没搜到",
-      stats: "${time} ms 内找到 ${hits} 条结果"
-    },
-    valine: true,fancybox: true,
-    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
-    ignores : [
-      function(uri) {
-        return uri.includes('#');
-      },
-      function(uri) {
-        return new RegExp(LOCAL.path+"$").test(uri);
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
       }
-    ]
-  };
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
 </script>
 
-<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
 
-<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 
-<script src="/js/app.js?v=0.2.5"></script>
-
+  <script>Fluid.plugins.codeWidget();</script>
 
 
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
 
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>
